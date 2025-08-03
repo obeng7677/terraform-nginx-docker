@@ -21,5 +21,12 @@ resource "docker_container" "nginx_server" {
   ports {
     internal = 80
     external = 8081
+}
+
+
+  volumes {
+    host_path      = "/home/ubuntu/nginx-site"
+    container_path = "/usr/share/nginx/html"
   }
 }
+  
